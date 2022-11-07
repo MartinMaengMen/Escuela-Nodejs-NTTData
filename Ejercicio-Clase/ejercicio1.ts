@@ -4,7 +4,7 @@
         * Se debe emitir un evento cuando se tenga una respuesta de las api. ej. ('Se cargo la data: <NombrePais>')
         * Se debe emitir eventos de falla cuando no se encuentre el vecino del pais (ocasionar el error en el 2do vecino)
         * */
-import {EventEmitter} from "events";
+       import {EventEmitter} from "events";
 
        const searchByCodeCountry = async (alpha3Code) => {
         try {
@@ -38,10 +38,10 @@ const eventoError = (eventEmitter,paisesVecinos/*,paisBuscar*/)=>{
   eventEmitter.emit('error',paisesVecinos)
 }
       searchByCodeCountry('br').then(value=>{
-        const nombrePais = value[0].name.common;
+        const resultado = value[0];
+        const {name,borders} = resultado;
         const eventEmitter = new EventEmitter();
-        eventoRespuestaApi(eventEmitter,nombrePais)
-        const paisesVecinos = value[0].borders;
-        eventoError(eventEmitter,paisesVecinos/*,'CHL'*/)
+        eventoRespuestaApi(eventEmitter,name.common)
+        eventoError(eventEmitter,borders/*,'CHL'*/)
       });
 
