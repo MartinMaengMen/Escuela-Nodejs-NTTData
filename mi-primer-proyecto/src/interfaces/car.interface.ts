@@ -4,5 +4,5 @@ export interface Car{
     year : number;
     description : string;
     price : number;
-    model : string;
+    modelCar : string;
 }
