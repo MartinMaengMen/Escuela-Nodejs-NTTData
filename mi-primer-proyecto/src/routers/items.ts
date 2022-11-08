@@ -6,10 +6,10 @@ const router = Router();
 
 //http://localhost:3000/items [GET|POST|DELETE|PUT]
 router.get('/:id',logMiddleware,getItem)
-router.get('/',getItems)
-router.delete('/:id',deleteItem)
-router.put('/',updateItem)
-router.post('/',addItem)
+router.get('/',logMiddleware,getItems)
+router.delete('/:id',logMiddleware,deleteItem)
+router.put('/',logMiddleware,updateItem)
+router.post('/',logMiddleware,addItem)
 /*router.get('/',(request : Request, response : Response)=>{
     response.send({data : "Se envia este dato.<Martín Ng>..."})
 });*/

@@ -10,4 +10,4 @@ const verifyToken = (jwt:string)=>{
     return isVerify
 }
 
-export { generateToken}
+export { generateToken,verifyToken}
