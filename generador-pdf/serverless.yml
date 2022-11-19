@@ -1,0 +1,22 @@
+service: generador-pdf
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-2
+
+functions:
+  hello:
+    handler: handler.handler
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
