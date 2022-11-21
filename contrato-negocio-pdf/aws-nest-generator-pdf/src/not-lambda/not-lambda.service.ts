@@ -20,13 +20,16 @@ export class NotLambdaService {
     proposalNumber:string,
     proposalIntroduction:string,
     projectScope:string,
-    aditionalInformation:string
+    aditionalInformation:string,
+    servicesList
   }): Promise<Buffer> {
     const browser = await launch({
       headless: true,
       userDataDir: '/dev/null',
     });
-
+    contrato.servicesList.forEach(element => {
+      console.log(element)
+    });
     const html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html
       xmlns="http://www.w3.org/1999/xhtml"
@@ -972,7 +975,8 @@ export class NotLambdaService {
     proposalNumber:string,
     proposalIntroduction:string,
     projectScope:string,
-    aditionalInformation:string
+    aditionalInformation:string,
+    servicesList
   }): Promise<string> {
     const buffer = await this.getPdfFromPuppeter(contrato);
     return buffer.toString('base64')
