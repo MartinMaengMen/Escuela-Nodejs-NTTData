@@ -27,8 +27,8 @@
   const editorAditionalInformation = makeEditor('#editorAditionalInformation');
 
   function createPdf(
-    senderLogo,
-    senderSignature,
+    //senderLogo,
+    //senderSignature,
     senderName,
     senderCompany,
     senderSlogan,
@@ -49,15 +49,15 @@
 
     isLoading(true);
 
-    fetch('http://localhost:3000/create-pdf', {
+    fetch('http://localhost:3000/dev', {
       method: 'POST',
       headers: new Headers({
         'Accept': '*/*',
         'Content-type': 'application/json'
       }),
       body: JSON.stringify({
-        senderLogo: senderLogo || ' ',
-        senderSignature: senderSignature || ' ',
+        //senderLogo: senderLogo || ' ',
+        //senderSignature: senderSignature || ' ',
         senderName: senderName || ' ',
         senderCompany: senderCompany || ' ',
         senderSlogan: senderSlogan || ' ',
@@ -125,8 +125,8 @@
     let aditionalInformation = editorAditionalInformation.root.innerHTML;    
 
     createPdf(
-      senderLogo,
-      senderSignature,
+      //senderLogo,
+      //senderSignature,
       senderName,
       senderCompany,
       senderSlogan,
