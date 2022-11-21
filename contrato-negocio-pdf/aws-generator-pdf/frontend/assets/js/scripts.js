@@ -49,7 +49,7 @@
 
     isLoading(true);
 
-    fetch('http://localhost:3000/dev', {
+    fetch('http://localhost:3000/create-pdf', {
       method: 'POST',
       headers: new Headers({
         'Accept': '*/*',

@@ -27,9 +27,13 @@ export class NotLambdaService {
       headless: true,
       userDataDir: '/dev/null',
     });
-    contrato.servicesList.forEach(element => {
-      console.log(element)
-    });
+    var htmlServicesList = '<br />Productos/Servicios:<br/>'
+    var cont = 1
+    contrato.servicesList[1].data.forEach(element => {
+      htmlServicesList = htmlServicesList +'<br/>'+ cont+') '+element.service+'<br/>'+'&nbsp;- '+element.hours+'<br/>'+'&nbsp;- '+element.price+'<br/>'+'&nbsp;- '+element.total+'<br/>'
+        cont+=1
+        });
+
     const html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html
       xmlns="http://www.w3.org/1999/xhtml"
@@ -741,6 +745,21 @@ export class NotLambdaService {
                                         font-size: 14px;
                                       "
                                     >
+                                    ${htmlServicesList}
+                                    </p>
+                                      <p
+                                      style="
+                                        margin: 0;
+                                        -webkit-text-size-adjust: none;
+                                        -ms-text-size-adjust: none;
+                                        mso-line-height-rule: exactly;
+                                        font-family: arial, 'helvetica neue',
+                                          helvetica, sans-serif;
+                                        line-height: 21px;
+                                        color: #333333;
+                                        font-size: 14px;
+                                      "
+                                    >
                                       <br />${contrato.aditionalInformation}
                                     </p>
                                     <p
@@ -764,174 +783,6 @@ export class NotLambdaService {
                                 </td>
                               </tr>
                             </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-                <table
-                  class="es-content"
-                  cellspacing="0"
-                  cellpadding="0"
-                  align="center"
-                  style="
-                    mso-table-lspace: 0pt;
-                    mso-table-rspace: 0pt;
-                    border-collapse: collapse;
-                    border-spacing: 0px;
-                    table-layout: fixed !important;
-                    width: 100%;
-                  "
-                >
-                  <tr>
-                    <td align="center" style="padding: 0; margin: 0">
-                      <table
-                        class="es-content-body"
-                        cellspacing="0"
-                        cellpadding="0"
-                        bgcolor="#ffffff"
-                        align="center"
-                        style="
-                          mso-table-lspace: 0pt;
-                          mso-table-rspace: 0pt;
-                          border-collapse: collapse;
-                          border-spacing: 0px;
-                          background-color: #ffffff;
-                          width: 600px;
-                        "
-                      >
-                        <tr>
-                          <td align="left" style="padding: 20px; margin: 0">
-                            <!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:296px" valign="top"><![endif]-->
-                            <table
-                              class="es-left"
-                              cellspacing="0"
-                              cellpadding="0"
-                              align="left"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                border-collapse: collapse;
-                                border-spacing: 0px;
-                                float: left;
-                              "
-                            >
-                              <tr>
-                                <td
-                                  align="left"
-                                  style="padding: 0; margin: 0; width: 276px"
-                                >
-                                  <table
-                                    width="100%"
-                                    cellspacing="0"
-                                    cellpadding="0"
-                                    role="presentation"
-                                    style="
-                                      mso-table-lspace: 0pt;
-                                      mso-table-rspace: 0pt;
-                                      border-collapse: collapse;
-                                      border-spacing: 0px;
-                                    "
-                                  >
-                                    <tr>
-                                      <td
-                                        class="es-m-txt-l"
-                                        style="
-                                          padding: 0;
-                                          margin: 0;
-                                          font-size: 0px;
-                                        "
-                                        align="left"
-                                      >
-                                        <img
-                                          src="https://nbcxij.stripocdn.email/content/guids/CABINET_72ae56bfd9fd38e61d74e80e2e6e9a06/images/draw_signature_app_255_1_wro.png"
-                                          alt
-                                          style="
-                                            display: block;
-                                            border: 0;
-                                            outline: none;
-                                            text-decoration: none;
-                                            -ms-interpolation-mode: bicubic;
-                                          "
-                                          width="186"
-                                        />
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                                <td
-                                  class="es-hidden"
-                                  style="padding: 0; margin: 0; width: 20px"
-                                ></td>
-                              </tr>
-                            </table>
-                            <!--[if mso]></td><td style="width:96px" valign="top"><![endif]-->
-                            <table
-                              class="es-left"
-                              cellspacing="0"
-                              cellpadding="0"
-                              align="left"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                border-collapse: collapse;
-                                border-spacing: 0px;
-                                float: left;
-                              "
-                            >
-                              <tr>
-                                <td
-                                  align="left"
-                                  style="padding: 0; margin: 0; width: 96px"
-                                >
-                                  <table
-                                    width="100%"
-                                    cellspacing="0"
-                                    cellpadding="0"
-                                    role="presentation"
-                                    style="
-                                      mso-table-lspace: 0pt;
-                                      mso-table-rspace: 0pt;
-                                      border-collapse: collapse;
-                                      border-spacing: 0px;
-                                    "
-                                  >
-                                    <tr>
-                                      <td
-                                        class="es-m-txt-c"
-                                        style="
-                                          padding: 0;
-                                          margin: 0;
-                                          padding-top: 5px;
-                                          padding-bottom: 5px;
-                                          font-size: 0px;
-                                        "
-                                        align="center"
-                                      >
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                            <!--[if mso]></td><td style="width:20px"></td><td style="width:148px" valign="top"><![endif]-->
-                            <table
-                              class="es-right"
-                              cellspacing="0"
-                              cellpadding="0"
-                              align="right"
-                              style="
-                                mso-table-lspace: 0pt;
-                                mso-table-rspace: 0pt;
-                                border-collapse: collapse;
-                                border-spacing: 0px;
-                                float: right;
-                              "
-                            >
-                              
-                            </table>
-                            <!--[if mso]></td></tr></table><![endif]-->
                           </td>
                         </tr>
                       </table>

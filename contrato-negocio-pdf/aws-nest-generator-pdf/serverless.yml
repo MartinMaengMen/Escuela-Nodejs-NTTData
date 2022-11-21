@@ -15,7 +15,7 @@ provider:
   name: aws
   deploymentMethod: direct
   runtime: nodejs12.x
-  stage: dev
+  stage: create-pdf
   region: us-east-1
 
 package:
