@@ -34,3 +34,27 @@
       console.log(idioma)
       console.log(paisesVecinos)
   });
+  //2
+  const prepararPizza = async ()=>{
+    abrirCajaPizza()
+    setTimeout(() => {
+      tomarRefresco()
+      console.log('Bep Bep Beeep! Horno Calentado!')
+      meterPizza()
+    }, 5000)
+  }
+  const abrirCajaPizza = async ()=>{
+    setTimeout(() => console.log('Pizza colocada en la sartén'), 3000)
+  }
+  const tomarRefresco = async ()=>{
+    console.log('Tomando refresco ....')
+  }
+  const meterPizza = async()=>{
+    mirarTV()
+    setTimeout(() => console.log('Bep Bep Beeep! Pizza lista!'), 10000)
+  }
+  const mirarTV = async ()=>{
+    console.log('Mirando TV ...')
+  }
+
+  prepararPizza()
